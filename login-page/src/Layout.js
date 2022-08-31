@@ -1,30 +1,31 @@
-import { Outlet, Link } from "react-router-dom";
-import Login from "./screens/login";
+// import { Link } from "react-router-dom";
+// import { Outlet } from "react-router-outlet";
 
-const Layout = () => {
-  return (
-    <>
+// import Login from "./screens/login";
+
+// const Layout = () => {
+//   return (
+//     <>
       
-    {
-    <Link to="/login" element={<Login />}>Login</Link>
-    /* <nav>
-        <ul>
-          <li>
-            <Link to="/">Login</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-          <li>
-            <Link to="/register">Register</Link>
-          </li>
+//     {
+//      <Link to="/login" element={<Login />}>.</Link>
+//     /* <nav>
+//         <ul>
+//           <li>
+//             <Link to="/">Login</Link>
+//           </li>
+//           <li>
+//             <Link to="/login">Login</Link>
+//           </li>
+//           <li>
+//             <Link to="/register">Register</Link>
+//           </li>
 
-        </ul>
-      </nav> */}
+//         </ul>
+//       </nav> */}
+//       <Outlet />
+//     </>
+//   )
+// };
 
-      <Outlet />
-    </>
-  )
-};
-
-export default Layout;
+// export default Layout;

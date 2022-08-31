@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { createBrowserHistory } from 'history';
-import { Route, BrowserRouter, Routes, Navigate } from 'react-router-dom';
+import { Route, BrowserRouter, HashRouter, Switch,Redirect } from 'react-router-dom';
 import { Login } from './screens/login'
 import { Register } from './screens/register'
 import { createRoot } from 'react-dom/client';
@@ -16,13 +16,28 @@ const hist = createBrowserHistory()
 export default function MyApp() {
   return (
     <BrowserRouter>
-      <Routes>
+    <HashRouter history={hist} basename='/'>
+            <Switch>
+              <Route path='/login' component={Login} />
+              <Route path='/register' component={Register} />
+              <Route path='/app' component={App} />
+              <Redirect from='/' to='/login' />
+            </Switch>
+          </HashRouter>
+    {/* <Router>
+      <Switch>
+      <Route exact path="/login" component={Login} />
+      <Route exact path="/register" component={Register} />
+      <Navigate from='/' to='/login' />
+      </Switch>
+    </Router> */}
+      {/* <Routes>
         <Route  path="/" element={<Layout />}>
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
           <Route path="/app" element={<App/>}/>
         </Route>
-      </Routes>
+      </Routes> */}
     </BrowserRouter>
   );
 }
